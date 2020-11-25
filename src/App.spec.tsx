@@ -43,6 +43,26 @@ describe("App", () => {
     await driver.when.contextMenu(minefield);
     expect(minefield.classList).toContain("question");
   });
+
+  it("should rightclicking an open field do nothing", async () => {
+    const app = await driver.get.app();
+    const minefield = await driver.get.minefieldAt(0);
+    minefield.click();
+    const currentClass = minefield.classList[0]
+    await driver.when.contextMenu(minefield);
+    expect(minefield.classList).toContain(currentClass);
+  });
+
+  it("should rightclicking a question mark remove the mark", async () => {
+    const app = await driver.get.app();
+    const minefield = await driver.get.minefieldAt(0);
+    await driver.when.contextMenu(minefield);
+    expect(minefield.classList).toContain("flag");
+    await driver.when.contextMenu(minefield);
+    expect(minefield.classList).toContain("question");
+    await driver.when.contextMenu(minefield);
+    expect(minefield.classList).toContain("covered");
+  });
 });
 
 describe("App check store logic", () => {
@@ -121,9 +141,28 @@ describe("App check store logic", () => {
       .when.created();
       const minefieldToClick = await driver.get.minefieldAt(0);
       const neigbhor = await driver.get.minefieldAt(1);
+      expect(neigbhor.classList).toContainEqual(
+        "covered"
+      );
       minefieldToClick.click();
       expect(neigbhor.classList).toContainEqual(
       "mine0"
+    );
+  });
+
+  it("should click the yellow happy face start a new game", async () => {
+    await driver.given
+      .withTwoFieldsOneMineBoard()
+      .given.setCustomizedStore()
+      .when.created();
+      const minefield = await driver.get.minefieldAt(0);
+      await driver.when.contextMenu(minefield);
+      expect(minefield.classList).toContainEqual(
+        "flag"
+      );
+      await driver.get.smileyButton().click();
+      expect(minefield.classList).toContainEqual(
+      "covered"
     );
   });
 });

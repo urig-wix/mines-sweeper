@@ -215,16 +215,7 @@ export default class mineSweeperStore {
   }
 
   private countMineNeigbhors(index: number): number {
-    const res1 = this.getFieldNeigbhorsIndexes(index);
-    const res2 = res1.filter(
-      (neigbhorIndex) => this.mines[neigbhorIndex].isMine
-    );
-    return res2.length;
-    // const res = this.getFieldNeigbhorsIndexes(index).filter(
-    //   (neigbhorIndex) => this.mines[neigbhorIndex].isMine
-    // ).length;
-
-    return this.getFieldNeigbhorsIndexes(index)?.filter(
+    return this.getFieldNeigbhorsIndexes(index).filter(
       (neigbhorIndex) => this.mines[neigbhorIndex].isMine
     ).length;
   }
