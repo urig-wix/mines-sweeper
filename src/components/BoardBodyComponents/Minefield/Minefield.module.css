@@ -1,0 +1,46 @@
+.minefield-item {
+  float: left;
+  width: 16px;
+  height: 16px;
+  background: url(../../../assets/minesweeper.png) no-repeat;
+}
+
+.covered {
+  background-position: 0 -39px;
+}
+.mine0 {
+  background-position: 0 -23px;
+}
+.mine1 {
+  background-position: -16px -23px;
+}
+.mine2 {
+  background-position: -32px -23px;
+}
+.mine3 {
+  background-position: -48px -23px;
+}
+.mine4 {
+  background-position: -64px -23px;
+}
+.mine5 {
+  background-position: -80px -23px;
+}
+.mine6 {
+  background-position: -96px -23px;
+}
+.mine7 {
+  background-position: -112px -23px;
+}
+.mine8 {
+  background-position: -128px -23px;
+}
+.mine {
+  background-position: -32px -39px;
+}
+.flag {
+  background-position: -16px -39px;
+}
+.question {
+  background-position: -80px -39px;
+}

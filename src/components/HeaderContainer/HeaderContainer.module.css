@@ -1,0 +1,46 @@
+
+.minesweeper-header-wrapper {
+    border-bottom: 7px solid #bdbdbd;
+}
+
+.minesweeper-header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 5px;
+    border: 2px solid;
+    border-color: #7d7d7d #fff #fff #7d7d7d;
+    align-items: center;
+    overflow: hidden;
+}
+
+.minesweeper-reset-button {
+  background: url(../../assets/minesweeper.png) no-repeat;
+  height: 29px;
+  width: 29px;
+  margin: 0 auto;
+}
+
+.minesweeper-reset-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+.minesweeper-reset-button:active {
+    background-position: -26px -55px;
+  }
+
+.face-smile {
+  background-position: 0 -55px;
+}
+.face-pressed {
+  background-position: -26px -55px;
+}
+.face-surprised {
+  background-position: -52px -55px;
+}
+.face-sad {
+  background-position: -78px -55px;
+}
+.face-sunglasses {
+  background-position: -104px -55px;
+}

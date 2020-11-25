@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { HeaderContainer } from "./components/HeaderContainer/HeaderContainer";
+import { BoardBody } from "./components/BoardBodyComponents/BoardBody/BoardBody";
+import mineSweeperStore, { StoreProvider } from "./store/minesweeperStore";
 
-function App() {
+function App(props: {store: mineSweeperStore}) {
+
+  const {store} = props;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StoreProvider value={store}>
+      <div data-testid="app" className="container" tabIndex={0} onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => store.handleKeyDown(event)} >
+        <HeaderContainer />
+        <BoardBody />
+      </div>
+    </StoreProvider>
   );
 }
 

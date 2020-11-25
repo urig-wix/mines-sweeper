@@ -1,0 +1,45 @@
+.container {
+  text-align: center;
+}
+
+.numbers {
+  float: left;
+  width: 13px;
+  height: 23px;
+  background: url(../../../assets/minesweeper.png)
+    no-repeat;
+}
+
+.d0 {
+  background-position: 0 0;
+}
+.d1 {
+  background-position: -13px 0;
+}
+.d2 {
+  background-position: -26px 0;
+}
+.d3 {
+  background-position: -39px 0;
+}
+.d4 {
+  background-position: -52px 0;
+}
+.d5 {
+  background-position: -65px 0;
+}
+.d6 {
+  background-position: -78px 0;
+}
+.d7 {
+  background-position: -91px 0;
+}
+.d8 {
+  background-position: -104px 0;
+}
+.d9 {
+  background-position: -117px 0;
+}
+.dm {
+  background-position: -130px 0;
+}
